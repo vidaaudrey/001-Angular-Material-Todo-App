@@ -1,1 +1,67 @@
-My Page
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+   <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  </head>
+
+  <body ng-app="todoApp" layout="column" layout-align="center center">
+    <md-toolbar layout="row" layout-align="center">
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleTodo()" aria-label="Show todo groups">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+      <h2> Material Todo App</h2>
+    </md-toolbar>
+
+    <div flex layout="row" ng-controller="TodoController" id="mainBody">
+      <md-content class="md-padding">
+        <form ng-submit="addTodo()">
+          <div layout layout-align-gt-sm="center center">
+            <md-input-container flex="85">
+              <label>Add todo item</label>
+              <input ng-model="todoText" placeholder="Todo item">
+            </md-input-container>
+            <md-input-container>
+               <md-button type="submit" class="md-fab" aria-label="Add todo items">
+                  <md-icon md-svg-icon="add" ></md-icon> 
+               </md-button>
+            </md-input-container>
+          </div>
+        </form>
+        
+        <div>
+          <div flex layout layout-align="end end" class="listHeader">
+            {{remaining()}} of {{todos.length}} remaining</span>
+            [<a href="" ng-click="archive()">Archive</a>] 
+          </div>
+          <ul>
+            <li ng-repeat="todo in todos">
+              <md-checkbox ng-model="todo.done" aria-label="Todo Checkbox" ng-init="todo.done=false" >
+                {{todo.text}}
+              </md-checkbox>
+            </li>
+          </ul>
+        </div>
+
+
+      </md-content>
+      </div>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+    <script src="./src/todos/TodoController.js"></script>
+
+  </body>
+</html>
