@@ -1,5 +1,5 @@
 # 001
-AngularJS Todo List with Material Design
+AngularJS Todo List App with Material Design
 
 This is a day 1 project. 
 
