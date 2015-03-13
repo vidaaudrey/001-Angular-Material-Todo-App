@@ -1,8 +1,8 @@
 angular.module('todoApp', ['ngMaterial'])
   .controller('TodoController', ['$scope', function($scope) {
     $scope.todos = [
-      {text:'learn angular', done:true},
-      {text:'build an angular app', done:false}];
+      {text:'Make an Angular and Material Design App', done:true},
+      {text:'Learn Github', done:false}];
  
     $scope.addTodo = function() {
       $scope.todos.push({text:$scope.todoText, done:false});
